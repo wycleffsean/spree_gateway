@@ -24,7 +24,8 @@ module Spree
     end
 
     def capture(payment, creditcard, gateway_options)
-      provider.capture((payment.amount * 100).round, payment.response_code, gateway_options)
+      #provider.capture((payment.amount * 100).round, payment.response_code, gateway_options)
+      provider.capture(payment, creditcard, gateway_options)
     end
 
     def credit(money, creditcard, response_code, gateway_options)
